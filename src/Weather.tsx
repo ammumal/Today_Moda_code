@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 
 export default class Weather extends React.Component{
+    
     render(){
         const {height, width}=Dimensions.get('screen');
         return (
@@ -39,6 +40,6 @@ const styles = StyleSheet.create({
         flex:3,
         textAlign: 'left',
         flexDirection: 'column',
-        marginTop: 10,
+        marginTop: 15,
     }
 });

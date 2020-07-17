@@ -41,13 +41,16 @@ export default class App extends React.Component<Props,State>{
         </View>
         <ScrollView>
           <View style={styles.weather}>
+            {/* 날씨 영역 */}
             <Weather/>
           </View>
           <View style={styles.keyword}>
+            {/* 키워드 영역 */}
             <Keyword/>
           </View>
           <View style={styles.shopping}>
-          <Shopping/>
+            {/* 패션 이미지 영역 */}
+            <Shopping/>
           </View>
         </ScrollView>
       </SafeAreaView>
