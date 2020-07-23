@@ -24,12 +24,11 @@ const API_KEY = "b86c474546c60f7c146da98180738950";
 
 const Header = styled.Text`
 color: #000000;
-font-size: 25px;
+font-size: 20px;
 text-align: center;
 align-items: center;
 justify-content: center;
 margin: 9px;
-font-weight: bold;
 `;
 
 interface Props {}
@@ -77,13 +76,14 @@ export default class App extends React.Component<Props,State>{
     return (
       <SafeAreaView>
         <View style={styles.header}>
-          <Header>Today's мода</Header>
+        <Header>Today's мода</Header>
         </View>
         <ScrollView>
           <View style={styles.weather}>
             {isLoaded ?
             <Weather city={city} weatherName={weatherName} temp={Math.floor((cityTemp-273.15)*10)/10} feels={Math.floor((feels-273.15)*10)/10}/>
             : error?<Text>{error}</Text>: null}
+            
           </View>
           <View style={styles.keyword}>
             {/* 키워드 영역 */}
@@ -102,7 +102,7 @@ export default class App extends React.Component<Props,State>{
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#FAFAFA',
-    height: 55
+    height: 45
   },
   weather: {
     

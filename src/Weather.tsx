@@ -1,8 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-// https://ionicons.com/   icon 파일명 찾는곳
-
 import PropTypes from 'prop-types';
 
 const weatherCases = {
@@ -51,19 +49,16 @@ const weatherCases = {
 }
 
 
-function Weather({ city, weatherName, temp, feels }){
+function Weather({ city, weatherName, temp, feels}){
     const {height, width}=Dimensions.get('screen');
     return (
         <View style={styles.container}>
-            <View style={styles.weather_img}>
-                <Icon name={weatherCases[weatherName].icon} size={width/3} color="black"/>
-            </View>
-            
+            <Icon name={weatherCases[weatherName].icon} size={height/5} color="black"/>
+            <Text>{weatherName}</Text>
             <View style={styles.w_info}>
-                <Text style={styles.w_txt}>{weatherName}</Text>
-                <Text style={{fontSize: 15}}>city: {city}</Text>
-                <Text style={{fontSize: 20}}>온도: {temp}°C</Text>
-                <Text style={{fontSize: 20}}>체감온도: {feels}°C</Text>
+                <Text>city: {city}</Text>
+                <Text>온도: {temp}°C</Text>
+                <Text>체감온도: {feels}°C</Text>
             </View>
         </View>
     )
@@ -79,25 +74,20 @@ export default Weather;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: '#DFFFFF',
         flexDirection: 'row',
         padding: 5,
         margin: 5,
         borderRadius: 5,
     },weather_img: {
+        flex:3,
         margin: 10,
         resizeMode: 'contain',
         alignItems: 'flex-start',
-        color:'black',
     }, w_info: {
         flex:3,
         textAlign: 'left',
         flexDirection: 'column',
-        marginTop: 20,
-        marginLeft: 10,
-        
-    }, w_txt: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        marginTop: 15,
     }
 });
