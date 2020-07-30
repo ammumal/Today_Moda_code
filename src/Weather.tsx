@@ -50,7 +50,6 @@ const weatherCases = {
 
 }
 
-
 function Weather({ city, weatherName, temp, feels }){
     const {height, width}=Dimensions.get('screen');
     return (
